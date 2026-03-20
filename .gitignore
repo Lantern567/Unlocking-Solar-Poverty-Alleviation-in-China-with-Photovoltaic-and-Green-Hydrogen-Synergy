@@ -1,6 +1,44 @@
-# PDF files from the root directory
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editors
+.cursor/
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Large raw or intermediate research data
+*.tif
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+temp_results_PV_*.csv
+optimization_results_all_scenarios*.csv
+combined_all_analysis_results.csv
+integrated_roi_payback_results.csv
+projects_with_payback_lt_10.csv
+
+# Optional manuscript exports
 H2-PV_Supplementary_information_0603.pdf
 mamuscript_H2-PV_0603.pdf
-
-# .cursor directory
-.cursor/ 

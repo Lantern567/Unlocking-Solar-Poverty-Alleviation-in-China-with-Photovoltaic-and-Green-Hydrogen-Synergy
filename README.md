@@ -1,54 +1,79 @@
 # Unlocking Solar Poverty Alleviation in China with Photovoltaic and Green Hydrogen Synergy
 
-This repository contains the data, methods, and results for the research project on "Unlocking Solar Poverty Alleviation in China with Photovoltaic and Green Hydrogen Synergy".
+This repository is a curated public version of the working research directory for the project on solar poverty alleviation in China through photovoltaic deployment and green hydrogen synergy.
 
-## Directory Structure
+The repository focuses on code, notebooks, methodological notes, and selected final outputs. Large raw datasets, bulky intermediate files, and local development artifacts are intentionally excluded so the project is easier to browse and share on GitHub.
 
-The repository is organized into three main directories: `data`, `methods`, and `results`.
+## What is included
 
-### `/data`
+- Core analysis notebook in `methods/notebooks/`
+- Main analysis script and supporting modeling modules in `methods/`
+- Method notes describing hydrogen, storage, and economic indicator calculations
+- Final tables and selected figures in `results/`
+- A lightweight unit test in `tests/`
 
-This directory stores all data used in the project.
+## What is intentionally excluded
 
--   **`/data/raw_data`**: Contains original, unprocessed datasets.
-    -   `gis_data`: Geospatial information (e.g., solar radiation, land use, poverty maps).
-    -   `economic_data`: Economic indicators, costs of PV and hydrogen technologies.
-    -   `policy_data`: Relevant policy documents and subsidy information.
-    -   `survey_data`: Survey data, if applicable.
--   **`/data/processed_data`**: Contains cleaned, transformed, or intermediate datasets.
-    -   `aggregated_data`: Data aggregated to specific regions or units.
-    -   `model_inputs`: Datasets ready for model input.
--   **`/data/literature_data`**: Data extracted from literature.
+- Large raster and GIS source files such as `PVOUT.tif` and other raw geospatial layers
+- Heavy intermediate CSV outputs such as `temp_results_PV_*.csv`
+- Full optimization dumps such as `optimization_results_all_scenarios*.csv`
+- Local IDE folders, caches, checkpoints, and virtual environments
 
-### `/methods`
+See `data/README.md` for a short note on omitted data categories.
 
-This directory contains all scripts, models, and methodological descriptions.
+## Directory layout
 
--   **`/methods/modeling`**: Scripts and details related to the models used.
-    -   `pv_potential_assessment`: Scripts for photovoltaic potential assessment.
-    -   `hydrogen_production_simulation`: Scripts for green hydrogen production simulation.
-    -   `economic_viability_analysis`: Scripts for economic viability analysis.
-    -   `poverty_alleviation_impact`: Methods/scripts for assessing poverty alleviation impact.
--   **`/methods/data_processing_scripts`**: Scripts used to process raw data into processed data.
--   **`/methods/analysis_scripts`**: Scripts for statistical analysis or generating results.
--   **`/methods/workflow_diagrams`**: Diagrams illustrating the methodological workflow.
+```text
+data/
+methods/
+  analysis_scripts/
+  data_processing_scripts/
+  documentation/
+  modeling/
+  notebooks/
+results/
+  figures/
+    charts/
+    maps/
+  tables/
+  supplementary_results/
+tests/
+```
 
-### `/results`
+## Key files
 
-This directory contains the outputs and findings of the project.
+- Notebook: `methods/notebooks/H2-PV_structure.ipynb`
+- Main script: `methods/analysis_scripts/auto_adjusted_3d_plot.py`
+- Modeling modules:
+  - `methods/modeling/cost_models.py`
+  - `methods/modeling/economic_parameters.py`
+  - `methods/data_processing_scripts/hydrogen_data_preparer.py`
+- Representative result tables:
+  - `results/tables/economic_assessment_results.csv`
+  - `results/tables/final_pv_battery_scenarios.csv`
+  - `results/tables/poverty_selected_with_pv_roi.xlsx`
 
--   **`/results/figures`**: Generated figures and plots.
-    -   `maps`: Geospatial result maps.
-    -   `charts`: Other graphical representations.
--   **`/results/tables`**: Tables summarizing key findings.
--   **`/results/reports`**: Any interim or final reports.
--   **`/results/supplementary_results`**: Additional results not in the main manuscript but potentially in supplementary information.
--   **`/results/presentations`**: Slides or materials for presenting research findings.
+## Quick start
 
-## Contributing
+1. Create a Python environment.
+2. Install dependencies:
 
-Details on how to contribute to the project will be added here.
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-## License
+3. Open the main notebook or run the selected analysis scripts.
 
-The license for this project will be specified here. 
+Note: some workflows still expect local raw datasets that are not included in this public repository.
+
+## Testing
+
+Run the included unit test with:
+
+```bash
+python -m unittest tests.test_cost_models
+```
+
+## Notes
+
+This repository is intended as a lightweight research archive for code sharing and result dissemination, not as a full mirror of the original local working directory.
